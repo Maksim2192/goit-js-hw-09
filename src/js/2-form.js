@@ -10,8 +10,9 @@ const savedData = localStorage.getItem(STORAGE_KEY);
 
 if (savedData) {
     const parsedData = JSON.parse(savedData);
-    form.elements.email.value = formData.email;
-    form.elements.message.value = formData.message;
+    formData = parsedData;
+    form.elements.email.value = parsedData.email;
+    form.elements.message.value = parsedData.message;
 }
 
 form.addEventListener("input", (e) => {
